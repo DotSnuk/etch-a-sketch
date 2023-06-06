@@ -20,4 +20,9 @@ function createGrid(){
         }
     }
 }
+
 createGrid();
+const divs = document.querySelectorAll('.grid');
+divs.forEach(d => d.addEventListener('mouseover', event => {
+    event.target.style.background = "black";
+}))
