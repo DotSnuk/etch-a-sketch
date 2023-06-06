@@ -21,8 +21,16 @@ function createGrid(){
     }
 }
 
+function changeColor(d){
+    
+}
+
 createGrid();
 const divs = document.querySelectorAll('.grid');
 divs.forEach(d => d.addEventListener('mouseover', event => {
     event.target.style.background = "black";
+    if (!event.target.classList.contains('colored')){
+        event.target.className += " colored";
+    }
+    
 }))
