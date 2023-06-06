@@ -1,0 +1,23 @@
+#div-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid {
+    border: solid 1px black;
+    flex-basis: 50px;
+    height: 50px;
+    margin: 0 -1px -1px 0;
+}
