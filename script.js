@@ -24,16 +24,18 @@ function createGrid(){
 function changeColor(){
     const divs = document.querySelectorAll('.colored');
     divs.forEach(d => {
-
+        const currentColor = d.style.background;
+        const values = currentColor.substring(4, (currentColor.length - 1)).split(',');
+        console.log(values);
     })
 
 }
 
-const colorArray = ["#000", "#333", "#666", "#999", "#ccc", "#fff"];
 createGrid();
 const divs = document.querySelectorAll('.grid');
 divs.forEach(d => d.addEventListener('mouseover', event => {
-    event.target.style.background = colorArray[0];
+    changeColor();
+    event.target.style.background = "rgb(0, 0, 0)";
     if (!event.target.classList.contains('colored')){
         event.target.className += " colored";
     }
