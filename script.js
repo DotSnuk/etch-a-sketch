@@ -21,14 +21,19 @@ function createGrid(){
     }
 }
 
-function changeColor(d){
-    
+function changeColor(){
+    const divs = document.querySelectorAll('.colored');
+    divs.forEach(d => {
+
+    })
+
 }
 
+const colorArray = ["#000", "#333", "#666", "#999", "#ccc", "#fff"];
 createGrid();
 const divs = document.querySelectorAll('.grid');
 divs.forEach(d => d.addEventListener('mouseover', event => {
-    event.target.style.background = "black";
+    event.target.style.background = colorArray[0];
     if (!event.target.classList.contains('colored')){
         event.target.className += " colored";
     }
