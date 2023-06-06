@@ -27,7 +27,7 @@ function changeColor(){
         const currentColor = d.style.background;
         const values = currentColor.substring(4, (currentColor.length - 1)).split(',');
         console.log(values);
-        d.target.style.background = ("rgb(" + (values[0] + 30) + ", "
+        d.style.background = ("rgb(" + (values[0] + 30) + ", "
                                         + (values[1] + 30) + ", "
                                         + (values[2] + 30) + ")");
                                         // look at this, doesnt work
