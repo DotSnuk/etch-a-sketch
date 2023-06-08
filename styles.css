@@ -1,13 +1,14 @@
 #div-container {
     display: flex;
     flex-direction: column;
-    flex: 1;    
+    margin: auto;
+    flex-basis: 960px;
 }
 
 body {
     display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 
 .row {
