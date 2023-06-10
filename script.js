@@ -40,8 +40,12 @@ function addListener(){
     }))
 }
 
-function squareSize(){
+function squareSize(squares){
     // calculate how big each gridsquare should be
+    const gridWidth = 960;
+    const squareSize = (gridWidth / squares);
+    // set style to set flexbasis and height to squaresize - 2 (to give space to border)
+
 }
 
 function changeColor(){
