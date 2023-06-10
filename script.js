@@ -40,6 +40,10 @@ function addListener(){
     }))
 }
 
+function squareSize(){
+    // calculate how big each gridsquare should be
+}
+
 function changeColor(){
     const divs = document.querySelectorAll('.colored');
     divs.forEach(d => {
