@@ -12,13 +12,20 @@ function addRow(){
     gridContainer.appendChild(newDiv);
 }
 
-function createGrid(){
-    for (let i = 0; i < 16; i++){
+function createGrid(squares = 16){
+    for (let i = 0; i < squares; i++){
         addRow();
-        for (let i = 0; i < 16; i++){
+        for (let i = 0; i < squares; i++){
             addDiv();
         }
     }
+}
+
+function removeGrid(){
+    grids = document.querySelectorAll('.grid');
+    rows = document.querySelectorAll('row');
+    grids.forEach(g => g.remove());
+    rows.forEach(r => r.remove());
 }
 
 function changeColor(){
@@ -46,3 +53,12 @@ divs.forEach(d => d.addEventListener('mouseover', event => {
     }
     
 }))
+
+document.querySelector('#new-grid').addEventListener('click', function() {
+    let newSquares = 0;
+    while (newSquares < 3 || newSquares > 100){
+        newSquares = prompt('Enter how many squares you want on each row/coloum');
+    }
+    removeGrid();
+    createGrid(newSquares);
+})
