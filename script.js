@@ -24,7 +24,7 @@ function createGrid(squares = 16){
 
 function removeGrid(){
     grids = document.querySelectorAll('.grid');
-    rows = document.querySelectorAll('row');
+    rows = document.querySelectorAll('.row');
     grids.forEach(g => g.remove());
     rows.forEach(r => r.remove());
 }
