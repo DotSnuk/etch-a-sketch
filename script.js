@@ -19,6 +19,7 @@ function createGrid(squares = 16){
             addDiv();
         }
     }
+    addListener();
 }
 
 function removeGrid(){
@@ -26,6 +27,17 @@ function removeGrid(){
     rows = document.querySelectorAll('row');
     grids.forEach(g => g.remove());
     rows.forEach(r => r.remove());
+}
+
+function addListener(){
+    const divs = document.querySelectorAll('.grid');
+    divs.forEach(d => d.addEventListener('mouseover', event => {
+    changeColor();
+    event.target.style.background = "rgb(0, 0, 0)";
+    if (!event.target.classList.contains('colored')){
+        event.target.className += " colored";
+    }
+    }))
 }
 
 function changeColor(){
@@ -44,16 +56,6 @@ function changeColor(){
 }
 
 createGrid();
-const divs = document.querySelectorAll('.grid');
-divs.forEach(d => d.addEventListener('mouseover', event => {
-    changeColor();
-    event.target.style.background = "rgb(0, 0, 0)";
-    if (!event.target.classList.contains('colored')){
-        event.target.className += " colored";
-    }
-    
-}))
-
 document.querySelector('#new-grid').addEventListener('click', function() {
     let newSquares = 0;
     while (newSquares < 3 || newSquares > 100){
