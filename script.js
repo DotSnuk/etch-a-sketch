@@ -13,12 +13,14 @@ function addRow(){
 }
 
 function createGrid(squares = 16){
+    
     for (let i = 0; i < squares; i++){
         addRow();
         for (let i = 0; i < squares; i++){
             addDiv();
         }
     }
+    squareSize(squares);
     addListener();
 }
 
@@ -42,8 +44,17 @@ function addListener(){
 
 function squareSize(squares){
     // calculate how big each gridsquare should be
-    const gridWidth = 960;
-    const squareSize = (gridWidth / squares);
+    const gridWidth = 860;
+    const squareSide = Math.floor((gridWidth / squares)) - 2;
+    console.log(squareSide);
+    const element = document.querySelectorAll('.grid');
+    element.forEach(e => {
+        e.style.flexBasis = squareSide + "px";
+        e.style.height = squareSide + "px";
+    })
+    
+    // document.getElementsByClassName('grid').style.flexBasis = squareSide + "px";
+    // document.getElementsByClassName('grid').style.height = squareSide + "px";
     // set style to set flexbasis and height to squaresize - 2 (to give space to border)
 
 }
